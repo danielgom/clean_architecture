@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public record Money(BigDecimal amount) {
 
+    public static final Money ZERO = new Money(BigDecimal.ZERO);
+
     public boolean isGreaterThanZero() {
         return this.amount != null && this.amount.compareTo(BigDecimal.ZERO) > 0;
     }
